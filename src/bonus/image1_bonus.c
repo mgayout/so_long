@@ -6,13 +6,13 @@
 /*   By: mgayout <mgayout@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 15:15:59 by mgayout           #+#    #+#             */
-/*   Updated: 2024/02/12 13:45:06 by mgayout          ###   ########.fr       */
+/*   Updated: 2024/02/20 14:17:22 by mgayout          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../so_long.h"
+#include "../../so_long_bonus.h"
 
-int	draw_bonus(t_slg *game)
+int	draw_bonus(t_slg_b *game)
 {
 	int		width;
 	int		height;
@@ -33,7 +33,7 @@ int	draw_bonus(t_slg *game)
 	return (0);
 }
 
-void	draw2_bonus(t_slg *game, int height, int width)
+void	draw2_bonus(t_slg_b *game, int height, int width)
 {
 	if (game->map[height][width] == game->content.wall)
 		wall_to_window_bonus(game, width, height);
@@ -51,7 +51,7 @@ void	draw2_bonus(t_slg *game, int height, int width)
 			height * game->content.hgt);
 }
 
-void	wall_to_window_bonus(t_slg *game, int x, int y)
+void	wall_to_window_bonus(t_slg_b *game, int x, int y)
 {
 	if (x == 0 && y == 0)
 		mlx_put_image_to_window(game->mlx, game->mlx_win, game->img.lcwall,
@@ -70,7 +70,7 @@ void	wall_to_window_bonus(t_slg *game, int x, int y)
 			x * game->content.wdt, y * game->content.hgt);
 }
 
-void	exit_to_window_bonus(t_slg *game, int x, int y)
+void	exit_to_window_bonus(t_slg_b *game, int x, int y)
 {
 	if (game->content.count_c != 0)
 		mlx_put_image_to_window(game->mlx, game->mlx_win, game->img.exit1,
@@ -80,7 +80,7 @@ void	exit_to_window_bonus(t_slg *game, int x, int y)
 			x * game->content.wdt, y * game->content.hgt);
 }
 
-void	print_screen(t_slg *game)
+void	print_screen(t_slg_b *game)
 {
 	char	*ptr;
 

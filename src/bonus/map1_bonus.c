@@ -6,11 +6,11 @@
 /*   By: mgayout <mgayout@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 18:49:17 by mgayout           #+#    #+#             */
-/*   Updated: 2024/02/12 13:29:13 by mgayout          ###   ########.fr       */
+/*   Updated: 2024/02/20 14:16:16 by mgayout          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../so_long.h"
+#include "../../so_long_bonus.h"
 
 char	**set_map_bonus(char *map)
 {
@@ -52,7 +52,7 @@ char	*set_map2_bonus(int fd, int i)
 	return (temp_map);
 }
 
-int	map_check_bonus(t_slg *game, char **map, char *arg)
+int	map_check_bonus(t_slg_b *game, char **map, char *arg)
 {
 	if (rectangle_map_bonus(game, map) == FALSE)
 	{
@@ -74,7 +74,7 @@ int	map_check_bonus(t_slg *game, char **map, char *arg)
 	return (TRUE);
 }
 
-int	map_check2_bonus(t_slg *game, char **map, char *arg)
+int	map_check2_bonus(t_slg_b *game, char **map, char *arg)
 {
 	char	*s;
 

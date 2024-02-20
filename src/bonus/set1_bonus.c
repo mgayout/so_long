@@ -6,13 +6,13 @@
 /*   By: mgayout <mgayout@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 14:35:58 by mgayout           #+#    #+#             */
-/*   Updated: 2024/02/12 11:33:02 by mgayout          ###   ########.fr       */
+/*   Updated: 2024/02/20 14:13:53 by mgayout          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../so_long.h"
+#include "../../so_long_bonus.h"
 
-void	set_img_bonus(t_slg *game)
+void	set_img_bonus(t_slg_b *game)
 {
 	player_path_bonus(game);
 	others_path_bonus(game);
@@ -22,7 +22,7 @@ void	set_img_bonus(t_slg *game)
 	xpm_to_others_image2_bonus(game);
 }
 
-void	player_path_bonus(t_slg *game)
+void	player_path_bonus(t_slg_b *game)
 {
 	game->img.path.player_down1 = "./texture/xpm/player/down1.xpm";
 	game->img.path.player_down2 = "./texture/xpm/player/down2.xpm";
@@ -42,7 +42,7 @@ void	player_path_bonus(t_slg *game)
 	game->img.path.player_up4 = "./texture/xpm/player/up4.xpm";
 }
 
-void	others_path_bonus(t_slg *game)
+void	others_path_bonus(t_slg_b *game)
 {
 	game->img.path.wall = "./texture/xpm/wall/wall.xpm";
 	game->img.path.lcwall = "./texture/xpm/wall/lcwall.xpm";
@@ -62,7 +62,7 @@ void	others_path_bonus(t_slg *game)
 	game->img.path.exit2 = "./texture/xpm/exit/exit2.xpm";
 }
 
-void	xpm_to_player_image1_bonus(t_slg *game)
+void	xpm_to_player_image1_bonus(t_slg_b *game)
 {
 	game->img.player_down1 = mlx_xpm_file_to_image(game->mlx,
 			game->img.path.player_down1, &(game->content.wdt),
@@ -90,7 +90,7 @@ void	xpm_to_player_image1_bonus(t_slg *game)
 			&(game->content.hgt));
 }
 
-void	xpm_to_player_image2_bonus(t_slg *game)
+void	xpm_to_player_image2_bonus(t_slg_b *game)
 {
 	game->img.player_right1 = mlx_xpm_file_to_image(game->mlx,
 			game->img.path.player_right1, &(game->content.wdt),

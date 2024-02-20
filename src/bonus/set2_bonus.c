@@ -6,13 +6,13 @@
 /*   By: mgayout <mgayout@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 17:31:11 by mgayout           #+#    #+#             */
-/*   Updated: 2024/02/12 11:32:57 by mgayout          ###   ########.fr       */
+/*   Updated: 2024/02/20 14:13:22 by mgayout          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../so_long.h"
+#include "../../so_long_bonus.h"
 
-void	xpm_to_others_image1_bonus(t_slg *game)
+void	xpm_to_others_image1_bonus(t_slg_b *game)
 {
 	game->img.wall = mlx_xpm_file_to_image(game->mlx, game->img.path.wall,
 			&(game->content.wdt), &(game->content.hgt));
@@ -30,7 +30,7 @@ void	xpm_to_others_image1_bonus(t_slg *game)
 			&(game->content.wdt), &(game->content.hgt));
 }
 
-void	xpm_to_others_image2_bonus(t_slg *game)
+void	xpm_to_others_image2_bonus(t_slg_b *game)
 {
 	game->img.coin1 = mlx_xpm_file_to_image(game->mlx, game->img.path.coin1,
 			&(game->content.wdt), &(game->content.hgt));

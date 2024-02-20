@@ -6,15 +6,15 @@
 #    By: mgayout <mgayout@student.42nice.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/09 11:44:12 by mgayout           #+#    #+#              #
-#    Updated: 2024/02/12 10:57:57 by mgayout          ###   ########.fr        #
+#    Updated: 2024/02/20 15:30:54 by mgayout          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	=	so_long
 NAME_B	= 	so_long_bonus
 CC		=	gcc
-CFLAGS	=	-Wextra -Wall -Werror -g3
-MFLAGS	=	-lXext -lX11
+CFLAGS	=	-Wextra -Wall -Werror
+MFLAGS	=	-L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz 
 REMOVE	=	rm -f
 SRC_DIR	=	./src/
 B_DIR	=	./src/bonus/

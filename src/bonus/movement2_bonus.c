@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../so_long.h"
+#include "../../so_long_bonus.h"
 
-void	move_up2_bonus(t_slg *game)
+void	move_up2_bonus(t_slg_b *game)
 {
 	if (game->map[game->pos.y - 1][game->pos.x] != game->content.wall)
 	{
@@ -35,7 +35,7 @@ void	move_up2_bonus(t_slg *game)
 	}
 }
 
-void	move_down2_bonus(t_slg *game)
+void	move_down2_bonus(t_slg_b *game)
 {
 	if (game->map[game->pos.y + 1][game->pos.x] != game->content.wall)
 	{
@@ -58,7 +58,7 @@ void	move_down2_bonus(t_slg *game)
 	}
 }
 
-void	move_left2_bonus(t_slg *game)
+void	move_left2_bonus(t_slg_b *game)
 {
 	if (game->map[game->pos.y][game->pos.x - 1] != game->content.wall)
 	{
@@ -81,7 +81,7 @@ void	move_left2_bonus(t_slg *game)
 	}
 }
 
-void	move_right2_bonus(t_slg *game)
+void	move_right2_bonus(t_slg_b *game)
 {
 	if (game->map[game->pos.y][game->pos.x + 1] != game->content.wall)
 	{

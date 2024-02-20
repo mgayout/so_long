@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../so_long.h"
+#include "../../so_long_bonus.h"
 
-void	coin_to_window_bonus(t_slg *game, int i, int x, int y)
+void	coin_to_window_bonus(t_slg_b *game, int i, int x, int y)
 {
 	if (i >= 0 && i < 100)
 		mlx_put_image_to_window(game->mlx, game->mlx_win, game->img.coin1,
@@ -38,7 +38,7 @@ void	coin_to_window_bonus(t_slg *game, int i, int x, int y)
 	}
 }
 
-void	trap_to_window_bonus(t_slg *game, int i, int x, int y)
+void	trap_to_window_bonus(t_slg_b *game, int i, int x, int y)
 {
 	if (i == 0 || game->content.count_c == 0)
 	{

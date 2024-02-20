@@ -6,13 +6,13 @@
 /*   By: mgayout <mgayout@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 15:49:57 by mgayout           #+#    #+#             */
-/*   Updated: 2024/02/12 11:33:20 by mgayout          ###   ########.fr       */
+/*   Updated: 2024/02/20 14:15:21 by mgayout          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../so_long.h"
+#include "../../so_long_bonus.h"
 
-int	press_key_bonus(int key, t_slg *game)
+int	press_key_bonus(int key, t_slg_b *game)
 {
 	if (game->content.count_c != 0)
 	{
@@ -41,7 +41,7 @@ int	press_key_bonus(int key, t_slg *game)
 	return (0);
 }
 
-void	move_up1_bonus(t_slg *game)
+void	move_up1_bonus(t_slg_b *game)
 {
 	if (game->map[game->pos.y - 1][game->pos.x] != game->content.wall
 		&& game->map[game->pos.y - 1][game->pos.x] != game->content.exit)
@@ -69,7 +69,7 @@ void	move_up1_bonus(t_slg *game)
 	}
 }
 
-void	move_down1_bonus(t_slg *game)
+void	move_down1_bonus(t_slg_b *game)
 {
 	if (game->map[game->pos.y + 1][game->pos.x] != game->content.wall
 		&& game->map[game->pos.y + 1][game->pos.x] != game->content.exit)
@@ -97,7 +97,7 @@ void	move_down1_bonus(t_slg *game)
 	}
 }
 
-void	move_left1_bonus(t_slg *game)
+void	move_left1_bonus(t_slg_b *game)
 {
 	if (game->map[game->pos.y][game->pos.x - 1] != game->content.wall
 		&& game->map[game->pos.y][game->pos.x - 1] != game->content.exit)
@@ -125,7 +125,7 @@ void	move_left1_bonus(t_slg *game)
 	}
 }
 
-void	move_right1_bonus(t_slg *game)
+void	move_right1_bonus(t_slg_b *game)
 {
 	if (game->map[game->pos.y][game->pos.x + 1] != game->content.wall
 		&& game->map[game->pos.y][game->pos.x + 1] != game->content.exit)

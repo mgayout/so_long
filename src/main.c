@@ -6,7 +6,7 @@
 /*   By: mgayout <mgayout@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 11:44:03 by mgayout           #+#    #+#             */
-/*   Updated: 2024/02/09 15:27:00 by mgayout          ###   ########.fr       */
+/*   Updated: 2024/02/20 16:02:57 by mgayout          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ void	init_game(t_slg *game)
 	}
 	mlx_loop_hook(game->mlx, &draw, game);
 	mlx_hook(game->mlx_win, KeyRelease, KeyReleaseMask, &press_key, game);
+	mlx_hook(game->mlx_win, 17, 0, &free_all, game);
 	mlx_loop(game->mlx);
 }
 
@@ -46,7 +47,7 @@ int	free_all(t_slg *game, int type)
 {
 	if (game->map != NULL)
 		free_map(game->map);
-	if (type == 1)
+	if (type != 0)
 	{
 		mlx_destroy_image(game->mlx, game->img.player_down1);
 		mlx_destroy_image(game->mlx, game->img.player_left1);

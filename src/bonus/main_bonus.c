@@ -6,13 +6,13 @@
 /*   By: mgayout <mgayout@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 11:44:03 by mgayout           #+#    #+#             */
-/*   Updated: 2024/02/12 13:35:52 by mgayout          ###   ########.fr       */
+/*   Updated: 2024/02/20 16:01:57 by mgayout          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../so_long.h"
+#include "../../so_long_bonus.h"
 
-void	set_content_bonus(t_contslg *content)
+void	set_content_bonus(t_contslg_b *content)
 {
 	content->wdt = 32;
 	content->hgt = 32;
@@ -27,7 +27,7 @@ void	set_content_bonus(t_contslg *content)
 	content->count_c = 0;
 }
 
-void	init_game_bonus(t_slg *game)
+void	init_game_bonus(t_slg_b *game)
 {
 	set_img_bonus(game);
 	game->mlx_win = mlx_new_window(game->mlx,
@@ -37,14 +37,15 @@ void	init_game_bonus(t_slg *game)
 		free_all_bonus(game, 1);
 	mlx_loop_hook(game->mlx, &draw_bonus, game);
 	mlx_hook(game->mlx_win, KeyRelease, KeyReleaseMask, &press_key_bonus, game);
+	mlx_hook(game->mlx_win, 17, 0, &free_all_bonus, game);
 	mlx_loop(game->mlx);
 }
 
-int	free_all_bonus(t_slg *game, int type)
+int	free_all_bonus(t_slg_b *game, int type)
 {
 	if (game->map != NULL)
 		free_map_bonus(game->map);
-	if (type == 1)
+	if (type != 0)
 	{
 		mlx_destroy_image(game->mlx, game->img.player_down1);
 		mlx_destroy_image(game->mlx, game->img.player_down2);
@@ -61,7 +62,7 @@ int	free_all_bonus(t_slg *game, int type)
 	exit(0);
 }
 
-void	free_img_bonus(t_slg *game)
+void	free_img_bonus(t_slg_b *game)
 {
 	mlx_destroy_image(game->mlx, game->img.player_left4);
 	mlx_destroy_image(game->mlx, game->img.player_right1);
@@ -92,7 +93,7 @@ void	free_img_bonus(t_slg *game)
 
 int	main(int argc, char **argv)
 {
-	t_slg	game;
+	t_slg_b	game;
 
 	if (argc != 2)
 	{

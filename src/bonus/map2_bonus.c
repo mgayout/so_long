@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../so_long.h"
+#include "../../so_long_bonus.h"
 
-int	rectangle_map_bonus(t_slg *game, char **map)
+int	rectangle_map_bonus(t_slg_b *game, char **map)
 {
 	size_t	width;
 	size_t	height;
@@ -33,7 +33,7 @@ int	rectangle_map_bonus(t_slg *game, char **map)
 	return (TRUE);
 }
 
-int	wall_map_bonus(t_slg *game, char **map)
+int	wall_map_bonus(t_slg_b *game, char **map)
 {
 	int	height;
 	int	width;
@@ -45,7 +45,7 @@ int	wall_map_bonus(t_slg *game, char **map)
 	return (rtrn);
 }
 
-int	wall_map2_bonus(t_slg *game, char **map, int height, int width)
+int	wall_map2_bonus(t_slg_b *game, char **map, int height, int width)
 {
 	while (map[height] != NULL)
 	{

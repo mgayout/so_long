@@ -6,13 +6,13 @@
 /*   By: mgayout <mgayout@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 17:27:19 by mgayout           #+#    #+#             */
-/*   Updated: 2024/02/12 11:33:12 by mgayout          ###   ########.fr       */
+/*   Updated: 2024/02/20 14:14:25 by mgayout          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../so_long.h"
+#include "../../so_long_bonus.h"
 
-void	player_to_window_bonus(t_slg *game, int i, int x, int y)
+void	player_to_window_bonus(t_slg_b *game, int i, int x, int y)
 {
 	game->pos.x = x;
 	game->pos.y = y;
@@ -31,7 +31,7 @@ void	player_to_window_bonus(t_slg *game, int i, int x, int y)
 		up_to_window_bonus(game, game->loop_count, x, y);
 }
 
-void	down_to_window_bonus(t_slg *game, int i, int x, int y)
+void	down_to_window_bonus(t_slg_b *game, int i, int x, int y)
 {
 	if (i >= 0 && i < 125)
 		mlx_put_image_to_window(game->mlx, game->mlx_win,
@@ -58,7 +58,7 @@ void	down_to_window_bonus(t_slg *game, int i, int x, int y)
 	}
 }
 
-void	left_to_window_bonus(t_slg *game, int i, int x, int y)
+void	left_to_window_bonus(t_slg_b *game, int i, int x, int y)
 {
 	if (i >= 0 && i < 125)
 		mlx_put_image_to_window(game->mlx, game->mlx_win,
@@ -85,7 +85,7 @@ void	left_to_window_bonus(t_slg *game, int i, int x, int y)
 	}
 }
 
-void	right_to_window_bonus(t_slg *game, int i, int x, int y)
+void	right_to_window_bonus(t_slg_b *game, int i, int x, int y)
 {
 	if (i >= 0 && i < 125)
 		mlx_put_image_to_window(game->mlx, game->mlx_win,
@@ -112,7 +112,7 @@ void	right_to_window_bonus(t_slg *game, int i, int x, int y)
 	}
 }
 
-void	up_to_window_bonus(t_slg *game, int i, int x, int y)
+void	up_to_window_bonus(t_slg_b *game, int i, int x, int y)
 {
 	if (i >= 0 && i < 125)
 		mlx_put_image_to_window(game->mlx, game->mlx_win,

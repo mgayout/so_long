@@ -6,13 +6,13 @@
 /*   By: mgayout <mgayout@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 14:56:24 by mgayout           #+#    #+#             */
-/*   Updated: 2024/02/12 14:04:34 by mgayout          ###   ########.fr       */
+/*   Updated: 2024/02/20 14:15:41 by mgayout          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../so_long.h"
+#include "../../so_long_bonus.h"
 
-int	check_1ecp_bonus(t_slg *game, char **map)
+int	check_1ecp_bonus(t_slg_b *game, char **map)
 {
 	int	height;
 	int	width;
@@ -39,7 +39,7 @@ int	check_1ecp_bonus(t_slg *game, char **map)
 	return (TRUE);
 }
 
-int	valid_path_bonus(t_slg *game, char *arg)
+int	valid_path_bonus(t_slg_b *game, char *arg)
 {
 	char	**copy;
 	int		height;
@@ -51,7 +51,7 @@ int	valid_path_bonus(t_slg *game, char *arg)
 	return (TRUE);
 }
 
-int	valid_path2_bonus(t_slg *game, char **copy, int h, char *arg)
+int	valid_path2_bonus(t_slg_b *game, char **copy, int h, char *arg)
 {
 	int	width;
 
@@ -77,7 +77,7 @@ int	valid_path2_bonus(t_slg *game, char **copy, int h, char *arg)
 	return (TRUE);
 }
 
-int	path_bonus(t_slg *game, char **map, int height, int width)
+int	path_bonus(t_slg_b *game, char **map, int height, int width)
 {
 	if (map[height][width] == game->content.wall)
 		return (FALSE);
