@@ -6,7 +6,7 @@
 /*   By: mgayout <mgayout@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 14:09:00 by mgayout           #+#    #+#             */
-/*   Updated: 2024/02/20 16:12:36 by mgayout          ###   ########.fr       */
+/*   Updated: 2024/02/23 12:46:23 by mgayout          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,6 +123,7 @@ typedef struct s_mappath
 {
 	int					ptrap;
 	int					count_c;
+	int					start;
 }				t_mappath_b;
 
 typedef struct s_game
@@ -175,7 +176,8 @@ void		free_map_bonus(char **map);
 
 int			rectangle_map_bonus(t_slg_b *game, char **map);
 int			wall_map_bonus(t_slg_b *game, char **map);
-int			wall_map2_bonus(t_slg_b *game, char **map, int height, int width);
+int			wall_ud_bonus(t_slg_b *game, char **map);
+int			wall_lr_bonus(t_slg_b *game, char **map);
 int			char_check_bonus(char **map);
 
 //MAP3

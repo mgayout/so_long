@@ -6,7 +6,7 @@
 /*   By: mgayout <mgayout@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 15:49:57 by mgayout           #+#    #+#             */
-/*   Updated: 2024/02/20 14:15:21 by mgayout          ###   ########.fr       */
+/*   Updated: 2024/02/23 13:29:53 by mgayout          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ void	move_up1_bonus(t_slg_b *game)
 		{
 			if (game->trap >= 2)
 			{
-				ft_printf("You lost !\n", 1);
+				ft_printf("You lost !\n");
 				free_all_bonus(game, 1);
 			}
 			game->ptrap = 1;
@@ -87,7 +87,7 @@ void	move_down1_bonus(t_slg_b *game)
 		{
 			if (game->trap >= 2)
 			{
-				ft_printf("You lost !\n", 1);
+				ft_printf("You lost !\n");
 				free_all_bonus(game, 1);
 			}
 			game->ptrap = 1;
@@ -115,7 +115,7 @@ void	move_left1_bonus(t_slg_b *game)
 		{
 			if (game->trap >= 2)
 			{
-				ft_printf("You lost !\n", 1);
+				ft_printf("You lost !\n");
 				free_all_bonus(game, 1);
 			}
 			game->ptrap = 1;
@@ -143,7 +143,7 @@ void	move_right1_bonus(t_slg_b *game)
 		{
 			if (game->trap >= 2)
 			{
-				ft_printf("You lost !\n", 1);
+				ft_printf("You lost !\n");
 				free_all_bonus(game, 1);
 			}
 			game->ptrap = 1;

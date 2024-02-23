@@ -6,7 +6,7 @@
 /*   By: mgayout <mgayout@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 17:27:19 by mgayout           #+#    #+#             */
-/*   Updated: 2024/02/20 14:14:25 by mgayout          ###   ########.fr       */
+/*   Updated: 2024/02/23 13:31:06 by mgayout          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	player_to_window_bonus(t_slg_b *game, int i, int x, int y)
 	game->pos.y = y;
 	if (game->ptrap == 1 && game->trap == 2 && game->content.count_c != 0)
 	{
-		ft_printf("You loose !\n", 1);
+		ft_printf("You lost !\n");
 		free_all_bonus(game, 1);
 	}
 	if (i == 0)

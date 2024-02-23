@@ -6,7 +6,7 @@
 /*   By: mgayout <mgayout@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 14:56:24 by mgayout           #+#    #+#             */
-/*   Updated: 2024/02/12 13:56:10 by mgayout          ###   ########.fr       */
+/*   Updated: 2024/02/23 12:44:15 by mgayout          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@ int	valid_path2(t_slg *game, char **copy, int height, char *arg)
 		width = 0;
 		while (copy[height][width] != '\0')
 		{
+			game->path.start = 0;
 			if ((copy[height][width] == game->content.obj
 				|| copy[height][width] == game->content.exit)
 				&& path(game, copy, height, width) == FALSE)
@@ -79,10 +80,12 @@ int	valid_path2(t_slg *game, char **copy, int height, char *arg)
 
 int	path(t_slg *game, char **map, int height, int width)
 {
-	if (map[height][width] == game->content.wall)
+	if (map[height][width] == game->content.wall
+	|| (map[height][width] == game->content.exit && game->path.start > 0))
 		return (FALSE);
 	if (map[height][width] == game->content.player)
 		return (TRUE);
+	game->path.start += 1;
 	map[height][width] = game->content.wall;
 	if (path(game, map, height + 1, width) == TRUE)
 		return (TRUE);

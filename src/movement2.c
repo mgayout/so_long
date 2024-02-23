@@ -22,7 +22,7 @@ void	move_up2(t_slg *game)
 		ft_printf("You moved %d times.\n", game->count);
 		if (game->map[game->pos.y][game->pos.x] == game->content.exit)
 		{
-			ft_printf("You won !\n", 1);
+			ft_printf("You won !\n");
 			free_all(game, 1);
 		}
 		game->map[game->pos.y][game->pos.x] = game->content.player;
@@ -40,7 +40,7 @@ void	move_down2(t_slg *game)
 		ft_printf("You moved %d times.\n", game->count);
 		if (game->map[game->pos.y][game->pos.x] == game->content.exit)
 		{
-			ft_printf("You won !\n", 1);
+			ft_printf("You won !\n");
 			free_all(game, 1);
 		}
 		game->map[game->pos.y][game->pos.x] = game->content.player;
@@ -58,7 +58,7 @@ void	move_left2(t_slg *game)
 		ft_printf("You moved %d times.\n", game->count);
 		if (game->map[game->pos.y][game->pos.x] == game->content.exit)
 		{
-			ft_printf("You won !\n", 1);
+			ft_printf("You won !\n");
 			free_all(game, 1);
 		}
 		game->map[game->pos.y][game->pos.x] = game->content.player;
@@ -76,7 +76,7 @@ void	move_right2(t_slg *game)
 		ft_printf("You moved %d times.\n", game->count);
 		if (game->map[game->pos.y][game->pos.x] == game->content.exit)
 		{
-			ft_printf("You won !\n", 1);
+			ft_printf("You won !\n");
 			free_all(game, 1);
 		}
 		game->map[game->pos.y][game->pos.x] = game->content.player;

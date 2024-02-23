@@ -6,7 +6,7 @@
 /*   By: mgayout <mgayout@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 11:44:03 by mgayout           #+#    #+#             */
-/*   Updated: 2024/02/20 16:01:57 by mgayout          ###   ########.fr       */
+/*   Updated: 2024/02/23 13:35:13 by mgayout          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,12 @@ int	main(int argc, char **argv)
 
 	if (argc != 2)
 	{
-		ft_printf("Error\nOnly 2 parameters are accepted.\n", 1);
+		ft_printf("Error\nOnly 2 parameters are accepted.\n");
+		return (0);
+	}
+	if (check_ber_bonus(argv[1]) == FALSE)
+	{
+		ft_printf("Error\nMap file isn't '.ber' format.\n");
 		return (0);
 	}
 	game.count = 0;
@@ -107,11 +112,6 @@ int	main(int argc, char **argv)
 	game.loop_count = 0;
 	game.mlx = mlx_init();
 	set_content_bonus(&(game.content));
-	if (check_ber_bonus(argv[1]) == FALSE)
-	{
-		ft_printf("Error\nMap file isn't '.ber' format.\n", 1);
-		return (0);
-	}
 	game.map = set_map_bonus(argv[1]);
 	if (game.map != NULL && map_check_bonus(&game, game.map, argv[1]) == TRUE)
 		init_game_bonus(&game);

@@ -6,7 +6,7 @@
 /*   By: mgayout <mgayout@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 18:49:17 by mgayout           #+#    #+#             */
-/*   Updated: 2024/02/12 13:58:58 by mgayout          ###   ########.fr       */
+/*   Updated: 2024/02/23 13:33:32 by mgayout          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	**set_map(char *map)
 	fd = open(map, O_RDONLY);
 	if (fd == -1)
 	{
-		ft_printf("Error\nFile not found or empty.\n", 1);
+		ft_printf("Error\nFile not found or empty.\n");
 		return (0);
 	}
 	else
@@ -56,17 +56,17 @@ int	map_check(t_slg *game, char **map, char *arg)
 {
 	if (rectangle_map(game, map) == FALSE)
 	{
-		ft_printf("Error\nMap isn't a rectangle.\n", 1);
+		ft_printf("Error\nMap isn't a rectangle.\n");
 		return (FALSE);
 	}
 	if (wall_map(game, map) == FALSE)
 	{
-		ft_printf("Error\nWalls are missing.\n", 1);
+		ft_printf("Error\nWalls are missing.\n");
 		return (FALSE);
 	}
 	if (char_check(map) == FALSE)
 	{
-		ft_printf("Error\nComponents are unknown.\n", 1);
+		ft_printf("Error\nComponents are unknown.\n");
 		return (FALSE);
 	}
 	if (map_check2(game, map, arg) == FALSE)
@@ -81,12 +81,12 @@ int	map_check2(t_slg *game, char **map, char *arg)
 	s = "Components are missing or too much entries/exits.";
 	if (check_1ecp(game, map) == FALSE)
 	{
-		ft_printf("Error\n%d\n", s);
+		ft_printf("Error\n%s\n", s);
 		return (FALSE);
 	}
 	if (valid_path(game, arg) == FALSE)
 	{
-		ft_printf("Error\nPath isn't valid.\n", 1);
+		ft_printf("Error\nPath isn't valid.\n");
 		return (FALSE);
 	}
 	return (TRUE);

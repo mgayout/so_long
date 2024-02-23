@@ -6,7 +6,7 @@
 /*   By: mgayout <mgayout@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 14:56:24 by mgayout           #+#    #+#             */
-/*   Updated: 2024/02/20 14:15:41 by mgayout          ###   ########.fr       */
+/*   Updated: 2024/02/23 12:47:50 by mgayout          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@ int	valid_path2_bonus(t_slg_b *game, char **copy, int h, char *arg)
 		width = 0;
 		while (copy[h][width] != '\0')
 		{
+			game->path.start = 0;
 			if ((copy[h][width] == game->content.obj
 				|| copy[h][width] == game->content.exit)
 				&& path_bonus(game, copy, h, width) == FALSE)
@@ -79,7 +80,8 @@ int	valid_path2_bonus(t_slg_b *game, char **copy, int h, char *arg)
 
 int	path_bonus(t_slg_b *game, char **map, int height, int width)
 {
-	if (map[height][width] == game->content.wall)
+	if (map[height][width] == game->content.wall
+	|| (map[height][width] == game->content.exit && game->path.start > 0))
 		return (FALSE);
 	if (map[height][width] == game->content.player)
 		return (TRUE);
@@ -87,6 +89,7 @@ int	path_bonus(t_slg_b *game, char **map, int height, int width)
 		game->path.ptrap += 1;
 	else
 		game->path.ptrap = 0;
+	game->path.start += 1;
 	map[height][width] = game->content.wall;
 	if (game->path.ptrap > 4)
 		return (FALSE);

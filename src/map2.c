@@ -35,35 +35,52 @@ int	rectangle_map(t_slg *game, char **map)
 
 int	wall_map(t_slg *game, char **map)
 {
-	int	height;
-	int	width;
-	int	rtrn;
-
-	height = 0;
-	width = 0;
-	rtrn = wall_map2(game, map, height, width);
-	return (rtrn);
+	if (game->height < 3)
+		return (FALSE);
+	if (wall_ud(game, map) != TRUE)
+		return (FALSE);
+	if (wall_lr(game, map) != TRUE)
+		return (FALSE);
+	return (TRUE);
 }
 
-int	wall_map2(t_slg *game, char **map, int height, int width)
+int	wall_ud(t_slg *game, char **map)
 {
-	while (map[height] != NULL)
+	int	width;
+
+	width = 0;
+	while (map[0][width] != '\0')
 	{
-		if (height == 0 && map[height][width] == game->content.wall)
+		if (map[0][width] == game->content.wall)
 			width++;
-		else if ((height >= 1 && height < game->height)
-			&& (map[height][0] == game->content.wall
-			|| map[height][game->width - 1] == game->content.wall)
-			&& (width != game->width))
+		else
+			return (FALSE);
+	}
+	width = 0;
+	while (map[game->height - 1][width] != '\0')
+	{
+		if (map[game->height - 1][width] == game->content.wall)
 			width++;
-		else if (height == game->height
-			&& map[height][width] == game->content.wall)
-			width++;
-		else if ((map[height][width] == '\0') && (height < game->height))
-		{
+		else
+			return (FALSE);
+	}
+	return (TRUE);
+}
+
+int	wall_lr(t_slg *game, char **map)
+{
+	int	height;
+	int	width;
+	int	width2;
+
+	height = 1;
+	width = 0;
+	width2 = game->width - 1;
+	while (height != game->height - 1)
+	{
+		if (map[height][width] == game->content.wall
+		&& map[height][width2] == game->content.wall)
 			height++;
-			width = 0;
-		}
 		else
 			return (FALSE);
 	}

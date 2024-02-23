@@ -6,7 +6,7 @@
 /*   By: mgayout <mgayout@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 11:44:18 by mgayout           #+#    #+#             */
-/*   Updated: 2024/02/20 16:13:36 by mgayout          ###   ########.fr       */
+/*   Updated: 2024/02/23 12:44:33 by mgayout          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,7 @@ typedef struct s_image
 typedef struct s_mappath
 {
 	int					count_c;
+	int					start;
 }				t_mappath;
 
 typedef struct s_game
@@ -125,7 +126,8 @@ void			free_map(char **map);
 
 int				rectangle_map(t_slg *game, char **map);
 int				wall_map(t_slg *game, char **map);
-int				wall_map2(t_slg *game, char **map, int height, int width);
+int				wall_ud(t_slg *game, char **map);
+int				wall_lr(t_slg *game, char **map);
 int				char_check(char **map);
 
 //MAP3
