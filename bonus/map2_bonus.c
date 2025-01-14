@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   map2.c                                             :+:      :+:    :+:   */
+/*   map2_bonus.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mgayout <mgayout@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/31 18:09:15 by mgayout           #+#    #+#             */
-/*   Updated: 2024/01/31 18:09:15 by mgayout          ###   ########.fr       */
+/*   Created: 2024/02/12 11:32:18 by mgayout           #+#    #+#             */
+/*   Updated: 2024/02/12 11:32:18 by mgayout          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/so_long.h"
+#include "../include/so_long_bonus.h"
 
-int	rectangle_map(t_slg *game, char **map)
+int	rectangle_map_bonus(t_slg_b *game, char **map)
 {
 	size_t	width;
 	size_t	height;
@@ -33,18 +33,18 @@ int	rectangle_map(t_slg *game, char **map)
 	return (TRUE);
 }
 
-int	wall_map(t_slg *game, char **map)
+int	wall_map_bonus(t_slg_b *game, char **map)
 {
 	if (game->height < 3)
 		return (FALSE);
-	if (wall_ud(game, map) != TRUE)
+	if (wall_ud_bonus(game, map) != TRUE)
 		return (FALSE);
-	if (wall_lr(game, map) != TRUE)
+	if (wall_lr_bonus(game, map) != TRUE)
 		return (FALSE);
 	return (TRUE);
 }
 
-int	wall_ud(t_slg *game, char **map)
+int	wall_ud_bonus(t_slg_b *game, char **map)
 {
 	int	width;
 
@@ -67,7 +67,7 @@ int	wall_ud(t_slg *game, char **map)
 	return (TRUE);
 }
 
-int	wall_lr(t_slg *game, char **map)
+int	wall_lr_bonus(t_slg_b *game, char **map)
 {
 	int	height;
 	int	width;
@@ -87,7 +87,7 @@ int	wall_lr(t_slg *game, char **map)
 	return (TRUE);
 }
 
-int	char_check(char **map)
+int	char_check_bonus(char **map)
 {
 	int	height;
 	int	width;
@@ -100,7 +100,7 @@ int	char_check(char **map)
 		{
 			if (map[height][width] != '1' && map[height][width] != '0'
 			&& map[height][width] != 'P' && map[height][width] != 'C'
-			&& map[height][width] != 'E')
+			&& map[height][width] != 'E' && map[height][width] != 'T')
 				return (FALSE);
 			width++;
 		}

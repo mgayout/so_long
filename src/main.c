@@ -6,11 +6,11 @@
 /*   By: mgayout <mgayout@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 11:44:03 by mgayout           #+#    #+#             */
-/*   Updated: 2024/02/23 13:33:07 by mgayout          ###   ########.fr       */
+/*   Updated: 2025/01/14 10:13:05 by mgayout          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "../include/so_long.h"
 
 void	set_content(t_contslg *content)
 {

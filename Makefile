@@ -6,78 +6,92 @@
 #    By: mgayout <mgayout@student.42nice.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/09 11:44:12 by mgayout           #+#    #+#              #
-#    Updated: 2024/03/13 10:01:31 by mgayout          ###   ########.fr        #
+#    Updated: 2025/01/14 11:20:14 by mgayout          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	=	so_long
-NAME_B	= 	so_long_bonus
-CC		=	gcc
-CFLAGS	=	-Wextra -Wall -Werror
-MFLAGS	=	-lXext -lX11
-REMOVE	=	rm -f
-SRC_DIR	=	./src/
-B_DIR	=	./src/bonus/
-LIBMLX	=	./minilibx/libmlx.a
-LIBFT	=	./libft/libft.a
-LIBPF	=	./ft_printf/libftprintf.a
-LIBGN	=	./get_next_line/get_next_line.a
+NAMEB	= 	so_long_bonus
 
-SRCS	=	src/main.c \
-			src/image.c \
-			src/movement1.c \
-			src/movement2.c \
-			src/map1.c \
-			src/map2.c \
-			src/map3.c \
-			src/set.c \
-	
-SRCS_B	=	src/bonus/main_bonus.c \
-			src/bonus/image1_bonus.c \
-			src/bonus/image2_bonus.c \
-			src/bonus/map1_bonus.c \
-			src/bonus/map2_bonus.c \
-			src/bonus/map3_bonus.c \
-			src/bonus/player_bonus.c \
-			src/bonus/set1_bonus.c \
-			src/bonus/set2_bonus.c \
-			src/bonus/movement1_bonus.c \
-			src/bonus/movement2_bonus.c \
+FLAG	=	-Wextra -Wall -Werror
+MFLAG	=	-lXext -lX11
 
-all: $(LIBFT) $(LIBMLX) $(LIBPF) $(LIBGN) $(NAME)
+SRCDIR	= src
+SRCBDIR = bonus
+HEADIR	= include
 
-$(NAME):
-			$(CC) $(SRCS) $(LIBFT) $(LIBMLX) $(LIBPF) $(LIBGN) $(CFLAGS) $(MFLAGS) -o $(NAME)
+SRC		= $(shell find $(SRCDIR) -name '*.c')
+SRCB	= $(shell find $(SRCBDIR) -name '*.c')
 
-bonus: $(LIBFT) $(LIBMLX) $(LIBPF) $(LIBGN) $(NAME_B)
+PRINTFDIR	=	ft_printf-main
+PRINTFURL	=	https://github.com/mgayout/ft_printf/archive/refs/heads/main.tar.gz
+PRINTFAR	=	libftprintf.a
 
-$(NAME_B):
-			$(CC) $(SRCS_B) $(LIBFT) $(LIBMLX) $(LIBPF) $(LIBGN) $(CFLAGS) $(MFLAGS) -o $(NAME_B)
+GNLDIR		=	get_next_line-main
+GNLURL		=	https://github.com/mgayout/get_next_line/archive/refs/heads/main.tar.gz
+GNLAR		=	get_next_line.a
 
-$(LIBFT):
-			@make bonus -C libft/
+MINIDIR		=	minilibx-linux-master
+MINIURL		=	https://github.com/42Paris/minilibx-linux/archive/refs/heads/master.tar.gz
+MINIAR		=	libmlx.a
 
-$(LIBMLX):
-			@make -C minilibx/
+AR			=	$(PRINTFDIR)/$(PRINTFAR) $(GNLDIR)/$(GNLAR) $(MINIDIR)/$(MINIAR)
 
-$(LIBPF):
-			@make -C ft_printf/
+all:	$(NAME)
 
-$(LIBGN):
-			@make -C get_next_line/
+$(NAME):	$(PRINTFAR) $(GNLAR) $(MINIAR)
+					@gcc $(SRC) $(AR) $(FLAG) $(MFLAG) -o $(NAME)
+
+bonus:	$(NAMEB)
+
+$(NAMEB):	$(PRINTFAR) $(GNLAR) $(MINIAR)
+					@gcc $(SRCB) $(AR) $(FLAG) $(MFLAG) -o $(NAMEB)
+
+$(PRINTFAR): 
+					@if [ ! -d $(PRINTFDIR) ]; then \
+						curl -L $(PRINTFURL) -o printf.tar.gz; \
+						tar -xzf printf.tar.gz; \
+						rm printf.tar.gz; \
+					fi
+					@make -C $(PRINTFDIR)
+#					@cp $(PRINTFDIR)/$(PRINTFAR) .
+
+$(GNLAR):
+					@if [ ! -d $(GNLDIR) ]; then \
+						curl -L $(GNLURL) -o gnl.tar.gz; \
+						tar -xzf gnl.tar.gz; \
+						rm gnl.tar.gz; \
+					fi
+					@make -C $(GNLDIR)
+#					@cp $(GNLDIR)/$(GNLAR) .
+
+$(MINIAR):
+					@if [ ! -d $(MINIDIR) ]; then \
+						curl -L $(MINIURL) -o mini.tar.gz; \
+						tar -xzf mini.tar.gz; \
+						rm mini.tar.gz; \
+					fi
+					@make -C $(MINIDIR)
+#					@cp $(MINIDIR)/$(MINIAR) .
 
 clean:
-			
-			@make clean -C libft/
-			@make clean -C minilibx/
-			@make clean -C ft_printf/
-			@make clean -C get_next_line/
+					@make clean -C $(PRINTFDIR)
+					@make clean -C $(GNLDIR)
+					@make clean -C $(MINIDIR)
 
-fclean:
-			$(REMOVE) $(NAME) $(NAME_B)
+fclean: clean
+					@rm -rf $(NAME) $(NAMEB)
+					@make fclean -C $(PRINTFDIR)
+					@make fclean -C $(GNLDIR)
+					@make fclean -C $(MINIDIR)
+					
+re:	fclean all
 
-re: fclean all
+rebonus: fclean bonus
 
-rebonus: fclean $(NAME_B)
+rmL:
+					@rm -rf $(PRINTFDIR)
+					@rm -rf $(GNLDIR)
+					@rm -rf $(MINIDIR)
 
-.PHONY: all clean fclean re rebonus
+.PHONY: all bonus clean fclean re rebonus rmL

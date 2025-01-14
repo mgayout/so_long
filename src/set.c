@@ -6,11 +6,11 @@
 /*   By: mgayout <mgayout@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 14:35:58 by mgayout           #+#    #+#             */
-/*   Updated: 2024/02/09 14:02:05 by mgayout          ###   ########.fr       */
+/*   Updated: 2025/01/14 10:13:24 by mgayout          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "../include/so_long.h"
 
 void	set_img(t_slg *game)
 {
