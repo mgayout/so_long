@@ -20,6 +20,8 @@ Voici quelques exemples de fonctionnalité demandées par le sujet de `SO_LONG` 
 
 ![jeu](img/jeu.png)
 
+En plus de l'utilisation d'une bibliothèque graphique, le projet `SO_LONG` nous permet de comprendre l'utilisation d'une structure et de la gestion d'erreurs.
+
 ## BONUS_PART
 
 La partie `bonus` de ce projet comprends les 3 choses suivantes :
@@ -46,4 +48,11 @@ La partie `bonus` de ce projet comprends les 3 choses suivantes :
 
 `make re` reprends le principe de `make fclean` en compilant de nouveau.
 
-`make rebonus` reprends le principe de `make fclean` en compilant de nouveau mes fichiers `bonus`. 
+`make rebonus` reprends le principe de `make fclean` en compilant de nouveau mes fichiers `bonus`.
+
+# TEST
+
+Pour tester ce programme il vous suffit de mettre le chemin vers une map (fichier .ber), comme ceci :
+
+`./so_long chemin/vers/la/map.ber`
+
