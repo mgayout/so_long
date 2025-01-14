@@ -30,7 +30,8 @@ La partie `bonus` de ce projet comprends les 3 choses suivantes :
 
 * Le compte total de déplacement doit être afficher directement dans la fenètre de jeu
 
-<iframe src="https://drive.google.com/file/d/1dhaJxLd27W2AHsHjNRD2V9GnzvEMGd1f/preview" width="640" height="480" allow="autoplay"></iframe>
+![jeu](clip/jeu.gif)
+
 
 # INSTALL
 
