@@ -30,8 +30,9 @@ La partie `bonus` de ce projet comprends les 3 choses suivantes :
 
 * Le compte total de déplacement doit être afficher directement dans la fenètre de jeu
 
-![jeu](clip/jeu.gif)
-
+<div align="center">
+<img align="center"  width="600" src="https://github.com/mgayout/so_long/blob/master/clip/jeu.gif">
+</div>
 
 # INSTALL
 
