@@ -1,9 +1,9 @@
-# <p align="center">SOLONG [Projet 42]</p>
+# <p align="center">SOLONG [42 Project]</p>
 
 <div align="center">
 	<table>
-		<tr><th>NOTE</th>
-		<th>ENGLISH VERSION</th></tr>
+		<tr><th>GRADE</th>
+		<th>FRENCH VERSION</th></tr>
 		<tr><th><img src="https://github.com/mgayout/mgayout/blob/main/img/note/125.png" height="100"></th>
 		<th><a href= "https://github.com/mgayout/so_long"><img src="https://github.com/mgayout/mgayout/blob/main/img/french.png" height="100"></a></th></tr>
 	</table>
