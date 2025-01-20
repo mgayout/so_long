@@ -11,7 +11,7 @@
 
 Le projet `SO_LONG` est un jeu en 2D, réalisé avec la bibliothèque graphique `Minilibx` (fournit par 42).
 
-Selon le sujet, le but de ce jeu est de collecter des `items` sur la `map` et de prendre la `sortie`.
+Le but de ce jeu est de collecter des `items` sur la `map` et de prendre la `sortie`.
 
 Voici quelques exemples de fonctionnalité demandées par le sujet de `SO_LONG` :
 
@@ -21,7 +21,9 @@ Voici quelques exemples de fonctionnalité demandées par le sujet de `SO_LONG` 
 
 * La touche `ECHAP` (ou `ESC`) permet de quitter proprement le jeu
 
-* La carte jouée doit contenir au minim 1 `entrée` (position de départ), 1 `sortie` et un `item`
+* La carte jouée doit contenir au minimum 1 `entrée` (position de départ), 1 `sortie` et un `item`
+
+* ...
 
 En plus de l'utilisation d'une bibliothèque graphique, le projet `SO_LONG` nous permet de comprendre l'utilisation d'une structure et de la gestion d'erreurs.
 
@@ -29,7 +31,7 @@ En plus de l'utilisation d'une bibliothèque graphique, le projet `SO_LONG` nous
 
 La partie `bonus` de ce projet comprends les 3 choses suivantes :
 
-* Le joueur peut perdre la partie si il est touché par un ennemie
+* Le joueur peut perdre la partie si il est touché par un ennemi
 
 * Le jeu doit contenir des `sprite animations`
 
@@ -37,23 +39,35 @@ La partie `bonus` de ce projet comprends les 3 choses suivantes :
 
 <p align="center"><img width="600" src="clip/game.gif"></p>
 
+## <p> </p>
+
 ## <p align="center">INSTALLATION</p>
 
-`make` permet de télécharger les librairies `LIBFT`, `FT_PRINTF`, `GETNEXTLINE` et `MINILIBX` et d'en compiler le contenue afin de créer l'executable `so_long`.
+* Pour télécharger `SOLONG` :
 
-`make bonus` permet de compiler mes fichiers `bonus` afin de créer l'executable `so_long_bonus`.
+```shell
+git clone https://github.com/mgayout/so_long.git
+```
+<div align="center">
+	<table>
+		<tr><th colspan="2" align="center">Règles</th></tr>
+		<tr><td align="center">make</td>
+		<td>Compilation</td></tr>
+		<tr><td align="center">make bonus</td>
+		<td>Compilation des fichiers bonus</td></tr>
+		<tr><td align="center">make clean</td>
+		<td>Suppression des fichiers objets</td></tr>
+		<tr><td align="center">make fclean</td>
+		<td>Suppression des fichiers objets et du programme so_long ou so_long_bonus</td></tr>
+		<tr><td align="center">make re</td>
+		<td>Suppression des fichiers objets et de l'archive suivi d'une compilation</td></tr>
+		<tr><td align="center">make rebonus</td>
+		<td>Suppression des fichiers objets et de l'archive suivi d'une compilation des fichiers bonus</td></tr>
+	</table>
+</div>
 
-`make clean` permet de supprimer tout les fichiers objets.
+* Pour tester `SOLONG` :
 
-`make fclean` reprends le principe de `make clean` en supprimant en plus l'executable `so_long`.
-
-`make re` reprends le principe de `make fclean` en compilant de nouveau.
-
-`make rebonus` reprends le principe de `make fclean` en compilant de nouveau mes fichiers `bonus`.
-
-# TEST
-
-Pour tester ce programme il vous suffit de mettre le chemin vers une map (fichier .ber), comme ceci :
-
-`./so_long chemin/vers/la/map.ber`
-
+```shell
+./so_long chemin/vers/la/map.ber
+```
