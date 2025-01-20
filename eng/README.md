@@ -50,7 +50,7 @@ git clone https://github.com/mgayout/so_long.git
 ```
 <div align="center">
 	<table>
-		<tr><th colspan="2" align="center">Règles</th></tr>
+		<tr><th colspan="2" align="center">Rules</th></tr>
 		<tr><td align="center">make</td>
 		<td>Compilation</td></tr>
 		<tr><td align="center">make bonus</td>
