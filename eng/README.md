@@ -4,7 +4,7 @@
 	<table>
 		<tr><th>NOTE</th>
 		<th>ENGLISH VERSION</th></tr>
-		<tr><th><img src="https://github.com/mgayout/mgayout/blob/main/img/note/125.png" height="100"></th>
+		<tr><th><img src="https://github.com/mgayout/mgayout/blob/master/img/note/125.png" height="100"></th>
 		<th><a href= "https://github.com/mgayout/so_long"><img src="https://github.com/mgayout/mgayout/blob/main/img/french.png" height="100"></a></th></tr>
 	</table>
 </div>

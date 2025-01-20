@@ -5,7 +5,7 @@
 		<tr><th>NOTE</th>
 		<th>ENGLISH VERSION</th></tr>
 		<tr><th><img src="https://github.com/mgayout/mgayout/blob/main/img/note/125.png" height="100"></th>
-		<th><a href= "https://github.com/mgayout/so_long/blob/main/eng/README.md"><img src="https://github.com/mgayout/mgayout/blob/main/img/english.png" height="100"></a></th></tr>
+		<th><a href= "https://github.com/mgayout/so_long/blob/master/eng/README.md"><img src="https://github.com/mgayout/mgayout/blob/main/img/english.png" height="100"></a></th></tr>
 	</table>
 </div>
 
