@@ -69,5 +69,5 @@ git clone https://github.com/mgayout/so_long.git
 * To test `SOLONG` :
 
 ```shell
-./so_long chemin/vers/la/map.ber
+./so_long path/to/the/map.ber
 ```
