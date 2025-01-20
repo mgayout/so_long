@@ -1,8 +1,13 @@
-# SO_LONG
+# <p align="center">SOLONG [Projet 42]</p>
 
-## 42 PROJECT
-
-![note](img/solong.png)
+<div align="center">
+	<table>
+		<tr><th>NOTE</th>
+		<th>ENGLISH VERSION</th></tr>
+		<tr><th><img src="https://github.com/mgayout/mgayout/blob/main/img/note/125.png" height="100"></th>
+		<th><a href= "https://github.com/mgayout/so_long/blob/main/eng/README.md"><img src="https://github.com/mgayout/mgayout/blob/main/img/english.png" height="100"></a></th></tr>
+	</table>
+</div>
 
 Le projet `SO_LONG` est un jeu en 2D, réalisé avec la bibliothèque graphique `Minilibx` (fournit par 42).
 
@@ -18,11 +23,9 @@ Voici quelques exemples de fonctionnalité demandées par le sujet de `SO_LONG` 
 
 * La carte jouée doit contenir au minim 1 `entrée` (position de départ), 1 `sortie` et un `item`
 
-![jeu](img/jeu.png)
-
 En plus de l'utilisation d'une bibliothèque graphique, le projet `SO_LONG` nous permet de comprendre l'utilisation d'une structure et de la gestion d'erreurs.
 
-## BONUS_PART
+### <p align="center">BONUS_PART</p>
 
 La partie `bonus` de ce projet comprends les 3 choses suivantes :
 
@@ -32,11 +35,9 @@ La partie `bonus` de ce projet comprends les 3 choses suivantes :
 
 * Le compte total de déplacement doit être afficher directement dans la fenètre de jeu
 
-<div align="center">
-<img align="center"  width="600" src="https://github.com/mgayout/so_long/blob/master/clip/jeu.gif">
-</div>
+<img align="center"  width="600" src="clip/game.gif">
 
-# INSTALL
+## <p align="center">INSTALLATION</p>
 
 `make` permet de télécharger les librairies `LIBFT`, `FT_PRINTF`, `GETNEXTLINE` et `MINILIBX` et d'en compiler le contenue afin de créer l'executable `so_long`.
 
