@@ -27,7 +27,7 @@ Voici quelques exemples de fonctionnalité demandées par le sujet de `SO_LONG` 
 
 En plus de l'utilisation d'une bibliothèque graphique, le projet `SO_LONG` nous permet de comprendre l'utilisation d'une structure et de la gestion d'erreurs.
 
-### <p align="center">BONUS_PART</p>
+### <p align="center">Partie Bonus</p>
 
 La partie `bonus` de ce projet comprends les 3 choses suivantes :
 

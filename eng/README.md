@@ -9,33 +9,33 @@
 	</table>
 </div>
 
-Le projet `SO_LONG` est un jeu en 2D, réalisé avec la bibliothèque graphique `Minilibx` (fournit par 42).
+The `SO_LONG` project is a 2D game, made with the `Minilibx` graphics library (provided by 42).
 
-Le but de ce jeu est de collecter des `items` sur la `map` et de prendre la `sortie`.
+The goal of this game is to collect `items` on the `map` and take the `exit`.
 
-Voici quelques exemples de fonctionnalité demandées par le sujet de `SO_LONG` :
+Here are some examples of functionality requested by the subject of `SO_LONG`:
 
-* Se déplacer dans les 4 directions (Haut, Bas, Gauche et Droite)
+* Move in 4 directions (Up, Down, Left and Right)
 
-* Afficher le compte total de déplacement dans le terminal
+* Show total trip count in terminal
 
-* La touche `ECHAP` (ou `ESC`) permet de quitter proprement le jeu
+* The `ESC` (or `ESC`) key allows you to properly exit the game
 
-* La carte jouée doit contenir au minimum 1 `entrée` (position de départ), 1 `sortie` et un `item`
+* The card played must contain at least 1 `entry` (starting position), 1 `exit` and an `item`
 
 * ...
 
-En plus de l'utilisation d'une bibliothèque graphique, le projet `SO_LONG` nous permet de comprendre l'utilisation d'une structure et de la gestion d'erreurs.
+In addition to the use of a graphics library, the `SO_LONG` project allows us to understand the use of a structure and error handling.
 
-### <p align="center">BONUS_PART</p>
+### <p align="center">Bonus part</p>
 
-La partie `bonus` de ce projet comprends les 3 choses suivantes :
+The `bonus` part of this project includes the following 3 things:
 
-* Le joueur peut perdre la partie si il est touché par un ennemi
+* The player can lose the game if he is hit by an enemy
 
-* Le jeu doit contenir des `sprite animations`
+* The game must contain `sprite animations`
 
-* Le compte total de déplacement doit être afficher directement dans la fenètre de jeu
+* The total movement count must be displayed directly in the game window
 
 <p align="center"><img width="600" src="clip/game.gif"></p>
 
@@ -43,7 +43,7 @@ La partie `bonus` de ce projet comprends les 3 choses suivantes :
 
 ## <p align="center">INSTALLATION</p>
 
-* Pour télécharger `SOLONG` :
+* To download `SOLONG` :
 
 ```shell
 git clone https://github.com/mgayout/so_long.git
@@ -54,19 +54,19 @@ git clone https://github.com/mgayout/so_long.git
 		<tr><td align="center">make</td>
 		<td>Compilation</td></tr>
 		<tr><td align="center">make bonus</td>
-		<td>Compilation des fichiers bonus</td></tr>
+		<td>Bonus files compilation</td></tr>
 		<tr><td align="center">make clean</td>
-		<td>Suppression des fichiers objets</td></tr>
+		<td>Deleting object files</td></tr>
 		<tr><td align="center">make fclean</td>
-		<td>Suppression des fichiers objets et du programme so_long ou so_long_bonus</td></tr>
+		<td>Deleting object files and the programm so_long or so_long_bonus</td></tr>
 		<tr><td align="center">make re</td>
-		<td>Suppression des fichiers objets et de l'archive suivi d'une compilation</td></tr>
+		<td>Deleting object files and the programm followed by compilation</td></tr>
 		<tr><td align="center">make rebonus</td>
-		<td>Suppression des fichiers objets et de l'archive suivi d'une compilation des fichiers bonus</td></tr>
+		<td>Deleting object files and the programm followed by bonus files compilation</td></tr>
 	</table>
 </div>
 
-* Pour tester `SOLONG` :
+* To test `SOLONG` :
 
 ```shell
 ./so_long chemin/vers/la/map.ber
