@@ -4,7 +4,7 @@
 	<table>
 		<tr><th>NOTE</th>
 		<th>ENGLISH VERSION</th></tr>
-		<tr><th><img src="https://github.com/mgayout/mgayout/blob/master/img/note/125.png" height="100"></th>
+		<tr><th><img src="https://github.com/mgayout/mgayout/blob/main/img/note/125.png" height="100"></th>
 		<th><a href= "https://github.com/mgayout/so_long"><img src="https://github.com/mgayout/mgayout/blob/main/img/french.png" height="100"></a></th></tr>
 	</table>
 </div>
@@ -37,7 +37,7 @@ The `bonus` part of this project includes the following 3 things:
 
 * The total movement count must be displayed directly in the game window
 
-<p align="center"><img width="600" src="clip/game.gif"></p>
+<p align="center"><img width="600" src="../clip/game.gif"></p>
 
 ## <p> </p>
 
