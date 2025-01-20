@@ -35,7 +35,7 @@ La partie `bonus` de ce projet comprends les 3 choses suivantes :
 
 * Le compte total de déplacement doit être afficher directement dans la fenètre de jeu
 
-<img align="center"  width="600" src="clip/game.gif">
+<p align="center"><img width="600" src="clip/game.gif"></p>
 
 ## <p align="center">INSTALLATION</p>
 
