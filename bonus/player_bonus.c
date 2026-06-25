@@ -19,7 +19,7 @@ void	player_to_window_bonus(t_slg_b *game, int i, int x, int y)
 	if (game->ptrap == 1 && game->trap == 2 && game->content.count_c != 0)
 	{
 		ft_printf("You lost !\n");
-		free_all_bonus(game, 1);
+		free_all_bonus(game);
 	}
 	if (i == 0)
 		down_to_window_bonus(game, game->loop_count, x, y);

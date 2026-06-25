@@ -34,18 +34,27 @@ void	init_game_bonus(t_slg_b *game)
 			(game->width * game->content.wdt),
 			(game->height * game->content.hgt), "so_long");
 	if (game->mlx_win == NULL)
-		free_all_bonus(game, 1);
-	mlx_loop_hook(game->mlx, &draw_bonus, game);
-	mlx_hook(game->mlx_win, KeyRelease, KeyReleaseMask, &press_key_bonus, game);
-	mlx_hook(game->mlx_win, 17, 0, &free_all_bonus, game);
+	{
+		free_img_bonus(game);
+		free_map_bonus(game->map);
+		mlx_destroy_display(game->mlx);
+		free(game->mlx);
+		exit(0);
+	}
+	mlx_loop_hook(game->mlx, (int (*)())&draw_bonus, game);
+	mlx_hook(game->mlx_win, KeyRelease, KeyReleaseMask, (int (*)())&press_key_bonus, game);
+	mlx_hook(game->mlx_win, 17, 0, (int (*)())&free_all_bonus, game);
 	mlx_loop(game->mlx);
 }
 
-int	free_all_bonus(t_slg_b *game, int type)
+int	free_all_bonus(void *param)
 {
+	t_slg_b	*game;
+
+	game = (t_slg_b *)param;
 	if (game->map != NULL)
 		free_map_bonus(game->map);
-	if (type != 0)
+	if (game->mlx_win != NULL)
 	{
 		mlx_destroy_image(game->mlx, game->img.player_down1);
 		mlx_destroy_image(game->mlx, game->img.player_down2);
@@ -57,8 +66,11 @@ int	free_all_bonus(t_slg_b *game, int type)
 		free_img_bonus(game);
 		mlx_destroy_window(game->mlx, game->mlx_win);
 	}
-	mlx_destroy_display(game->mlx);
-	free(game->mlx);
+	if (game->mlx != NULL)
+	{
+		mlx_destroy_display(game->mlx);
+		free(game->mlx);
+	}
 	exit(0);
 }
 
@@ -116,6 +128,11 @@ int	main(int argc, char **argv)
 	if (game.map != NULL && map_check_bonus(&game, game.map, argv[1]) == TRUE)
 		init_game_bonus(&game);
 	else
-		free_all_bonus(&game, 0);
+	{
+		if (game.map != NULL)
+			free_map_bonus(game.map);
+		mlx_destroy_display(game.mlx);
+		free(game.mlx);
+	}
 	return (1);
 }

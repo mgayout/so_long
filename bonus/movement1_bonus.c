@@ -37,7 +37,7 @@ int	press_key_bonus(int key, t_slg_b *game)
 			move_right2_bonus(game);
 	}
 	if (key == XK_Escape)
-		free_all_bonus(game, 1);
+		free_all_bonus(game);
 	return (0);
 }
 
@@ -60,7 +60,7 @@ void	move_up1_bonus(t_slg_b *game)
 			if (game->trap >= 2)
 			{
 				ft_printf("You lost !\n");
-				free_all_bonus(game, 1);
+				free_all_bonus(game);
 			}
 			game->ptrap = 1;
 		}
@@ -88,7 +88,7 @@ void	move_down1_bonus(t_slg_b *game)
 			if (game->trap >= 2)
 			{
 				ft_printf("You lost !\n");
-				free_all_bonus(game, 1);
+				free_all_bonus(game);
 			}
 			game->ptrap = 1;
 		}
@@ -116,7 +116,7 @@ void	move_left1_bonus(t_slg_b *game)
 			if (game->trap >= 2)
 			{
 				ft_printf("You lost !\n");
-				free_all_bonus(game, 1);
+				free_all_bonus(game);
 			}
 			game->ptrap = 1;
 		}
@@ -144,7 +144,7 @@ void	move_right1_bonus(t_slg_b *game)
 			if (game->trap >= 2)
 			{
 				ft_printf("You lost !\n");
-				free_all_bonus(game, 1);
+				free_all_bonus(game);
 			}
 			game->ptrap = 1;
 		}

@@ -37,7 +37,7 @@ int	press_key(int key, t_slg *game)
 			move_right2(game);
 	}
 	if (key == XK_Escape)
-		free_all(game, 1);
+		free_all(game);
 	return (0);
 }
 

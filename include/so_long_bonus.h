@@ -17,7 +17,8 @@
 # include "../ft_printf-main/include/ft_printf.h"
 # include "../get_next_line-main/include/get_next_line.h"
 # include "../minilibx-linux-master/mlx.h"
-# include "../minilibx-linux-master/mlx_int.h"
+# include <X11/X.h>
+# include <X11/keysym.h>
 # include <fcntl.h>
 # include <stdlib.h>
 
@@ -148,7 +149,7 @@ typedef struct s_game
 
 void		set_content_bonus(t_contslg_b *content);
 void		init_game_bonus(t_slg_b *game);
-int			free_all_bonus(t_slg_b *game, int type);
+int			free_all_bonus(void *param);
 void		free_img_bonus(t_slg_b *game);
 
 //SET1

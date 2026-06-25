@@ -1,0 +1,22 @@
+# Binaries
+so_long
+so_long_bonus
+
+# Dependencies (downloaded at build time)
+ft_printf-main/
+get_next_line-main/
+minilibx-linux-master/
+
+# IDE / editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Compiled objects / libraries
+*.o
+*.a
+
+# Downloaded archives
+*.tar.gz

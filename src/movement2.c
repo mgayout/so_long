@@ -23,7 +23,7 @@ void	move_up2(t_slg *game)
 		if (game->map[game->pos.y][game->pos.x] == game->content.exit)
 		{
 			ft_printf("You won !\n");
-			free_all(game, 1);
+			free_all(game);
 		}
 		game->map[game->pos.y][game->pos.x] = game->content.player;
 		game->player = 3;
@@ -41,7 +41,7 @@ void	move_down2(t_slg *game)
 		if (game->map[game->pos.y][game->pos.x] == game->content.exit)
 		{
 			ft_printf("You won !\n");
-			free_all(game, 1);
+			free_all(game);
 		}
 		game->map[game->pos.y][game->pos.x] = game->content.player;
 		game->player = 0;
@@ -59,7 +59,7 @@ void	move_left2(t_slg *game)
 		if (game->map[game->pos.y][game->pos.x] == game->content.exit)
 		{
 			ft_printf("You won !\n");
-			free_all(game, 1);
+			free_all(game);
 		}
 		game->map[game->pos.y][game->pos.x] = game->content.player;
 		game->player = 1;
@@ -77,7 +77,7 @@ void	move_right2(t_slg *game)
 		if (game->map[game->pos.y][game->pos.x] == game->content.exit)
 		{
 			ft_printf("You won !\n");
-			free_all(game, 1);
+			free_all(game);
 		}
 		game->map[game->pos.y][game->pos.x] = game->content.player;
 		game->player = 2;

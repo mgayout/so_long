@@ -13,7 +13,7 @@
 NAME	=	so_long
 NAMEB	= 	so_long_bonus
 
-FLAG	=	-Wextra -Wall -Werror
+FLAG	=	-Wextra -Wall -Werror -Wno-cast-function-type
 MFLAG	=	-lXext -lX11
 
 SRCDIR	= src
@@ -70,20 +70,24 @@ $(MINIAR):
 						curl -L $(MINIURL) -o mini.tar.gz; \
 						tar -xzf mini.tar.gz; \
 						rm mini.tar.gz; \
+						if [ ! -d $(MINIDIR) ]; then \
+							mv minilibx-linux-* $(MINIDIR); \
+						fi \
 					fi
 					@make -C $(MINIDIR)
 #					@cp $(MINIDIR)/$(MINIAR) .
 
 clean:
-					@make clean -C $(PRINTFDIR)
-					@make clean -C $(GNLDIR)
-					@make clean -C $(MINIDIR)
+					@if [ -d $(PRINTFDIR) ]; then make clean -C $(PRINTFDIR); fi
+					@if [ -d $(GNLDIR) ]; then make clean -C $(GNLDIR); fi
+					@if [ -d $(MINIDIR) ]; then make clean -C $(MINIDIR); fi
 
 fclean: clean
 					@rm -rf $(NAME) $(NAMEB)
-					@make fclean -C $(PRINTFDIR)
-					@make fclean -C $(GNLDIR)
-					@make fclean -C $(MINIDIR)
+					@if [ -d $(PRINTFDIR) ]; then make fclean -C $(PRINTFDIR); fi
+					@if [ -d $(GNLDIR) ]; then make fclean -C $(GNLDIR); fi
+					@if [ -d $(MINIDIR) ]; then make clean -C $(MINIDIR); fi
+					@if [ -d $(MINIDIR) ]; then rm -rf $(MINIDIR)/libmlx.a $(MINIDIR)/libmlx_Linux.a; fi
 					
 re:	fclean all
 
